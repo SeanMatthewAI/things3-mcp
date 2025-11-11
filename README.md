@@ -7,22 +7,22 @@ A local MCP (Model Context Protocol) server for Things 3 on macOS that enables A
 The server exposes the following tools for AI interaction:
 
 ### Reading Data (via AppleScript)
-- **things.list_areas** - List all Things areas with their IDs and names
-- **things.list_projects** - List projects, optionally filtered by area
-- **things.list_todos** - List to-dos from built-in lists (Inbox, Today, Upcoming, Anytime, Someday) or from specific projects
+- **things_list_areas** - List all Things areas with their IDs and names
+- **things_list_projects** - List projects, optionally filtered by area
+- **things_list_todos** - List to-dos from built-in lists (Inbox, Today, Upcoming, Anytime, Someday) or from specific projects
 
 ### Creating Items
-- **things.create_todo** - Create new to-dos with full parameter support (notes, when, deadline, tags, project/area assignment)
-- **things.create_project** - Create new projects via Things URL scheme
+- **things_create_todo** - Create new to-dos with full parameter support (notes, when, deadline, tags, project/area assignment)
+- **things_create_project** - Create new projects via Things URL scheme
 
 ### Managing Items
-- **things.update_item** - Update to-dos or projects by ID (requires auth token)
-- **things.complete** - Mark a to-do as completed
-- **things.cancel** - Mark a to-do as canceled
+- **things_update_item** - Update to-dos or projects by ID (requires auth token)
+- **things_complete** - Mark a to-do as completed
+- **things_cancel** - Mark a to-do as canceled
 
 ### Navigation
-- **things.show** - Open Things to a specific item or view
-- **things.search** - Run a search query in the Things UI
+- **things_show** - Open Things to a specific item or view
+- **things_search** - Run a search query in the Things UI
 
 ## Prerequisites
 

@@ -193,12 +193,12 @@ async function setStatusById(id: string, status: "completed" | "canceled") {
 
 const server = new McpServer({
   name: "things-mcp",
-  version: "0.1.0"
+  version: "0.2.0"
 });
 
 // list_areas
 server.tool(
-  "things.list_areas",
+  "things_list_areas",
   "List all Things areas (id, name).",
   {},
   async () => {
@@ -209,7 +209,7 @@ server.tool(
 
 // list_projects
 server.tool(
-  "things.list_projects",
+  "things_list_projects",
   "List projects, optionally filtered by areaId.",
   {
     areaId: z.string().optional().describe("Optional area ID to filter projects")
@@ -222,7 +222,7 @@ server.tool(
 
 // list_todos
 server.tool(
-  "things.list_todos",
+  "things_list_todos",
   "List to-dos from a built-in list (Inbox, Today, Anytime, Upcoming, Someday) or from a projectId.",
   {
     builtIn: z.enum(["Inbox", "Today", "Anytime", "Upcoming", "Someday"]).optional().describe("Built-in list name"),
@@ -239,7 +239,7 @@ server.tool(
 
 // create_todo
 server.tool(
-  "things.create_todo",
+  "things_create_todo",
   "Create a to-do. Returns the new Things ID.",
   {
     title: z.string().describe("Title of the to-do"),
@@ -258,7 +258,7 @@ server.tool(
 
 // create_project (no auth needed for basic add-project)
 server.tool(
-  "things.create_project",
+  "things_create_project",
   "Create a project via Things URL scheme.",
   {
     title: z.string().describe("Project title"),
@@ -277,7 +277,7 @@ server.tool(
 
 // update_item (uses env token by default; explicit input overrides if provided)
 server.tool(
-  "things.update_item",
+  "things_update_item",
   "Update a to-do or project by id via Things URL scheme. Uses THINGS_AUTH_TOKEN from env; you may override by passing authToken.",
   {
     authToken: z.string().optional().describe("Override auth token"),
@@ -325,7 +325,7 @@ server.tool(
 
 // show
 server.tool(
-  "things.show",
+  "things_show",
   "Open Things to a specific item or view.",
   {
     id: z.string().optional().describe("Item ID to show"),
@@ -340,7 +340,7 @@ server.tool(
 
 // search
 server.tool(
-  "things.search",
+  "things_search",
   "Open Things and run a search query in the UI.",
   {
     query: z.string().describe("Search query")
@@ -353,7 +353,7 @@ server.tool(
 
 // complete / cancel via AppleScript
 server.tool(
-  "things.complete",
+  "things_complete",
   "Mark a to-do as completed by ID (AppleScript).",
   {
     id: z.string().describe("To-do ID to complete")
@@ -365,7 +365,7 @@ server.tool(
 );
 
 server.tool(
-  "things.cancel",
+  "things_cancel",
   "Mark a to-do as canceled by ID (AppleScript).",
   {
     id: z.string().describe("To-do ID to cancel")
