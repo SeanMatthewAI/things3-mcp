@@ -36,7 +36,7 @@ The server exposes the following tools for AI interaction:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/things3-mcp.git
+git clone https://github.com/SeanMatthewAI/things3-mcp.git
 cd things3-mcp
 
 # Install dependencies
